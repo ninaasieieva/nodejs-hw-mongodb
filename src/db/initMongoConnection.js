@@ -1,12 +1,7 @@
-//initMongoConnection
-// src/db/initMongoDB.js
-
-/* mongodb+srv://ivan:<db_password>@cluster0.x2ftn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 */
 
 import mongoose from 'mongoose';
 
 import { env } from '../utils/env.js';
-
 export const initMongoConnection = async () => {
   try {
     const user = env('MONGODB_USER');

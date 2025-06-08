@@ -1,4 +1,11 @@
-import ContactCollection from '../db/models/contacts.js';
-export const getContacts = () => ContactCollection.find();
+import { ContactsCollection } from '../db/models/contacts.js';
 
-export const getContactById = (contactId) => ContactCollection.findById(contactId);
+export const getAllContacts = async () => {
+  const contacts = await ContactsCollection.find();
+  return contacts;
+};
+
+export const getContactById = async (contactId) => {
+  const contact = await ContactsCollection.findById(contactId);
+  return contact;
+};

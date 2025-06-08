@@ -63,6 +63,11 @@ export const setupServer = () => {
         message: error.message,
     });
     });
+    app.listen(port, () => {
+  console.log(`Server is running on ${port}`);
+}).on('error', (err) => {
+  console.error('Failed to start server:', err.message);
+});
 
 	const port = Number(env("PORT", 3000));
 	app.listen(port, () => console.log(`Server is running on ${port}`));
